@@ -256,4 +256,29 @@ bjects.[0K
 [0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
 [0m[0K
 $[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25hA[0K[?25l
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
+[0m[0K
+$ git[0K[7G[?25h[?25l$ git c[0K[?25hi[0K[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hr[0Ke[0Km[0Ko[0Kv[0Ki[0Kn[0Kg[0K[27G[?25l$ git commit -m "removing d[0K[?25ho[0Kc[0Ks[0K[32G[?25l$ git commit -m "removing docs f[0K[?25ho[0Kld[0Ke[0Kr[0K"[0K[?25l
+[0K[?25h[master 6e74ff9] removing docs folder[0K[?25l
+ 2 files changed, 25 insertions(+), 215 deletions(-)[0K
+ delete mode 100644 docs/CycloCross_Analysis.html[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
+[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[?25l
+[0K[?25hEnumerating objects: 11, done.[0K[?25l
+Counting objects: 100% (11/11), done.[0K
+Delta compression using up to 4 threads.[0K
+Compressing objects:  16% (1/6)[0K[1G[?25hCompressing objects: 100% (6/6), done.[0K[?25l
+Writing objects: 100% (6/6), 911 bytes | 70.00 KiB/s, done.[0K
+Total 6 (delta 3), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas: 100% (3/3), completed with 3 local [0Ko[1G[?25h[?25l
+bjects.[0K
+[0K[?25hTo https://github.com/schubertjan/CX.git[0K[?25l
+   ef98ce3..6e74ff9  master -> master[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
+[0m[0K
+$[0K[3G[?25h[?25l$ a[0K[?25h[?25l$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0K[?25ld[0K[9G[?25h[10G[11G[?25l$ git add -[0K[?25hA[0K[?25l
 [0K[?25h
