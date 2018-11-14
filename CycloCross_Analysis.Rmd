@@ -1,0 +1,124 @@
+---
+title: "Analysis of The Popularity of Cyclo-Cross"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(ggplot2)
+library(gridExtra)
+```
+
+
+```{r Data load and cleaning}
+listFiles <- list.files()[grepl("multiTimeline", list.files())]
+
+cCross <- lapply(listFiles, function(x)
+  read.csv(x, skip = 2, stringsAsFactors = FALSE))
+
+cCross <- lapply(cCross, function(x){
+  names(x)[2] <- gsub(pattern = "Cyclo.cross...",replacement = "",x = names(x)[2])
+  names(x)[2] <- gsub(pattern = "[.]",replacement = "",x = names(x)[2])
+  x})
+
+names(cCross) <- sapply(cCross, function(x)
+ names(x)[2]  
+)
+
+cCross <- lapply(cCross, function(x){
+  x[, 1] <- as.Date(x[, 1], format = "%Y-%m-%d")
+  x
+})
+```
+
+## About the analysis
+While obtaining TV ratings of cyclo-cross races from across the globe is difficult we can use openly available behaviour data to approximate popularity of cyclo-cross in different markets and answer the question -  Is Van Der Poel killing the cyclo-cross? This analysis looks at number of searches on Google including a term "cyclo-cross" and all similar terms (such as cyclocross etc.) in the following markets. 
+```{r Names}
+names(cCross)
+```
+Search terms in foreign languages are include (i.e. "veldrijden" is included in the data). 
+
+## Who searches for cyclo-cross?
+Like it or not, this is mainly a Belgium sport. Though the Dutch are second, the frequency of cyclo-cross related searches relative to other searches is only about 1/4 of what it is in Belgium and even with a larger population the total number of people searching for cyclo-cross is still only about a third compared to Belgium (well mainly Flanders). The UK comes closest (from the European countries) in terms of the absolute number of people searching for cyclo-cross (a smaller proportion of overall searches but a much larger population) but the number of people searching for cyclo-cross is still only about 2/3 of what it is in Belgium. The only country having a similar (or a slightly larger) number of cyclo-cross related searches are the US due to the sheer size of the market. Since the American cyclists do not participate in the European races, it is questionable to what extend the searches are related to their interest in the European races (and therefore influenced by the dominance of Van Der Poel). Since all the riders compete during the UCI World Championship (which draws the largest number of searches) we include the US in the analysis. Cyclo-cross popularity (expressed in number of searches) mainly comes from about six key markets (Belgium, the US, the UK, France, Germany and the Netherlands).
+
+**Popularity of CX related searches by market**
+```{r}
+geoData <- read.csv("geoMap.csv", skip = 2, stringsAsFactors = FALSE)
+names(geoData)[2] <- "index"
+geoData$index[geoData$index == "<1"] <- "0"
+geoData$index <- as.numeric(geoData$index)
+head(geoData[order(geoData$index, decreasing = TRUE), ], n = 25)
+```
+
+## About the method
+As one would expect, cyclo-cross searches are highly season starting in September and peaking in January and February. To deal with seasonality (and the fact that the peak of the 2018-2019 season is yet to come) we fit a model through the data which represents a long-term trend and allows comparison across seasons (even if the 2018 season hasn't finished yet).
+
+```{r Smooth and Season calculation}
+smoothTrend <- lapply(cCross, function(x) {
+  s <- loess(x[, 2] ~ seq(1:length(x[, 1])))
+  smoothIndex <- predict(s)
+  n <- names(x)
+  p <- ggplot(data = x) +
+    geom_line(aes_string(x = n[1], y = n[2])) +
+    geom_line(aes(x = x[, 1], y = smoothIndex), colour = "blue") +
+    ylab("Google Search Index (100 = max point)") + 
+    ggtitle(paste0("Popularity of cyclo-cross related search - ", n[2]))
+  return(p)
+})
+
+seasonTrend <- lapply(cCross, function(x){
+  s <- loess(x[, 2] ~ seq(1:length(x[, 1])))
+  DF <- data.frame(trend = predict(s),
+                         week = x[, 1])
+  DF$Year <- as.numeric(format(DF$week, format = "%Y"))
+  DF$Month <- as.numeric(format(DF$week, format = "%m"))
+  DF$Season <- ifelse(DF$Month > 5, DF$Year,DF$Year-1)
+  DF <- aggregate(x = DF$trend, by = list(Season = DF$Season),mean)
+  DF$Change <- c(NA, 
+                 unlist(sapply(1:nrow(DF), function(i) (DF$x[i]/DF$x[i-1]-1)*100)))
+  names(DF)[2] <- names(x)[2]
+  n <- names(DF)
+  trend <- ggplot(data = DF, aes_string(x = n[1], y = n[2])) +
+    geom_col() +
+    ylab("Google Search Index (100 = max point)") + 
+    ggtitle(paste0("Trend of popularity of CX related searches - ", n[2]))
+  change <- ggplot(data = DF, aes_string(x = n[1], y = n[3])) +
+    geom_col() +
+    ylab("Google Search Index (100 = max point)") + 
+    ggtitle(paste0("Average popularity of CX related searches by season - ", n[2]))
+  return(list(Trend = trend,
+                    Change = change,
+                    Table = DF))
+})
+```
+
+## Popularity of cyclo-cross worldwide
+Over the course of the last 5 years the popularity of cyclo-cross related searches has been decreasing. The trend suggests a further decline in 2018 - 2019 season.
+```{r Worldwide trend, fig.width = 10}
+print(smoothTrend$Worldwide)
+```
+
+We see a similar trend when looking at the average underlying trend in searches split by seasons (a season is defined as a period from May till May the following year). There is no apparent increase in the rate of decline in searches in season 2017-2018 and the current season 2018-2019. Arguably, those two seasons mark the dominance of Van Der Poel. 
+```{r Worldwide Season, fig.width = 10}
+print(seasonTrend$Worldwide$Trend)
+```
+
+## Popularity of cyclo-cross by country
+This is only an average and the picture changes when looking at individual countries. How do searches change in the country with the largest number of people interested in this sport? In Belgium, we see a large drop in the number of people searching for cyclo-cross in the last two seasons. This corresponds well with the Van Der Poel's one man show.
+
+```{r Season Belgium, fig.width = 10}
+print(seasonTrend$Belgium$Trend)
+```
+
+Are the Dutch more interested in cyclo-cross because of their countryman winning race after race? Yes, the number of people searching for cyclo-cross has been increasing steadily since 2015-2016 season and skyrocketed in the last season. Interestingly, it has been stable this season (is winning getting boring?).
+```{r Season Dutch, fig.width = 10}
+print(seasonTrend$Netherlands$Trend)
+```
+
+What about the other big market? In the US, the number of cyclo-cross related searches has been declining since 2014-2015 season and has slowed in the last two years. There has been a similar decline in the UK which however accelerated in the last two seasons. Similarly, there has been a decrease in searches in France in the last two seasons. The only market that hasn't seen a decrease is Germany. Even here, the rate of acceleration slowed in the last two seasons.
+```{r Season Other Markets, fig.width = 10}
+grid.arrange(seasonTrend$UnitedStates$Trend, seasonTrend$UnitedKingdom$Trend, seasonTrend$France$Trend, seasonTrend$Germany$Trend, nrow = 2, ncol = 2)
+```
+
+## Is Van Der Poel killing the cyclo-cross?
+As with any research is difficult to distinguish between correlation and causation. However, most cyclo-cross related searches come from Belgium and we see a significant drop in the number of searches which coincides with the dominance of Van Der Poel (similarly in France and the UK). This is not being offset by the increase in the Netherlands as the interest there is only about 1/3 of what it is in Belgium. However, there seems to be a wider trend showing a decrease in the total number of searches related to cyclo-cross (even before Van der Poel's time). This is especially true in the second (maybe even first) biggest market - the US. So "is Van Der Poel killing the cyclo-cross?", probably a little bit (sorry Mathieu).
