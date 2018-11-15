@@ -51,7 +51,7 @@ head(geoData[order(geoData$index, decreasing = TRUE), ], n = 25)
 ```
 
 ## About the method
-As one would expect, cyclo-cross searches are highly season starting in September and peaking in January and February. To deal with seasonality (and the fact that the peak of the 2018-2019 season is yet to come) we fit a model through the data which represents a long-term trend and allows comparison across seasons (even if the 2018 season hasn't finished yet).
+As one would expect, cyclo-cross searches are highly seasonal starting in September and peaking in January and February. To deal with seasonality (and the fact that the peak of the 2018-2019 season is yet to come) we fit a model through the data which represents a long-term trend and allows comparison across seasons (even if the 2018 season hasn't finished yet).
 
 ```{r Smooth and Season calculation}
 smoothTrend <- lapply(cCross, function(x) {
@@ -62,7 +62,7 @@ smoothTrend <- lapply(cCross, function(x) {
     geom_line(aes_string(x = n[1], y = n[2])) +
     geom_line(aes(x = x[, 1], y = smoothIndex), colour = "blue") +
     ylab("Google Search Index (100 = max point)") + 
-    ggtitle(paste0("Popularity of cyclo-cross related search - ", n[2]))
+    ggtitle(paste0("Popularity of cyclo-cross related searches - ", n[2]))
   return(p)
 })
 
