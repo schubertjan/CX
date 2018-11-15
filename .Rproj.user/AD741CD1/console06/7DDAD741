@@ -1,2 +1,102 @@
 [?25l$ gi[0K[?25ht[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25hA[0K[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rhistory.[0K[?25l
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Kp[?25l
+cs/files-pane.pper.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Kp
+cs/source-pane.pper.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Kp
+cs/windowlayoutstate.pper.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Kp
+cs/workbench-pane.pper.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Kr[?25l
+md-outputs.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Ks
+ources/prop/66F21CDC.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/shared/no[0Kt[?25l
+ebooks/paths.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Ks[?25l
+ources/s-9181F982/E66FB0D7.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD741CD1/[0Ks
+ources/s-9181F982/E66FB0D7-contents.[0K
+The file will have its original line endings in your working [0Kd
+irectory.[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
+[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25ht[0Ky[0Kp[0Ko[0Ks[0K[22G[21G[20G[19G[18G[?25l$ git commit -m "ftypos[0K[19G[?25h[?25l$ git commit -m "fitypos[0K[20G[?25h[?25l$ git commit -m "fixtypos[0K[21G[?25h[?25l$ git commit -m "fixitypos[0K[22G[?25h[?25l$ git commit -m "fixintypos[0K[23G[?25h[?25l$ git commit -m "fixingtypos[0K[24G[?25h[?25l$ git commit -m "fixing typos[0K[25G[?25h[26G[27G[28G[29G[30G[?25l$ git commit -m "fixing typos"[0K[?25h[?25l
+[0K[?25h[master 71285bb] fixing typos[0K[?25l
+ 17 files changed, 540 insertions(+), 330 deletions(-)[0K
+ create mode 100644 .RData[0K
+ rewrite .Rproj.user/AD741CD1/console06/7DDAD741 (100%)[0K
+ rewrite .Rproj.user/AD741CD1/console06/INDEX001 (100%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-E872BC44 => s-9181F98[0K2
+}/E66FB0D7 (66%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-E872BC44 => s-9181F98[0K2
+}/E66FB0D7-contents (94%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-E872BC44 => s-9181F98[0K2
+}/lock_file (100%)[0K
+ delete mode 100644 .Rproj.user/AD741CD1/sources/s-E872BC44/4[0K7
+9656EF[0K
+ delete mode 100644 .Rproj.user/AD741CD1/sources/s-E872BC44/4[0K7
+9656EF-contents[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E9493E-Cyc[0Kl
+oCross_Analysis/1/AD741CD19181F982/chunks.json[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
+[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[3G[?25h[4G[?25l$ gi[0K[?25h[?25lt[0K[5G[?25h[6G[7G[?25l$ git p[0K[?25h[?25lu[0K[8G[?25h[9G[?25l$ git pus[0K[?25hh[0K[?25l
+[0K[?25hEnumerating objects: 47, done.[0K[?25l
+Counting objects:  46% (22/47)[0K[1G[?25hCounting objects: 100% (47/47), done.[0K[?25l
+Delta compression using up to 4 threads.[0K
+Compressing objects:  29% (7/24)[0K[1G[?25hCompressing objects: 100% (24/24), done.[0K[?25l
+Writing objects:  96% (26/27)[0K[1G[?25hWriting objects: 100% (27/27), 35.60 KiB | 1.02 MiB/s, done.[0K[?25l
+Total 27 (delta 6), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas:  16% (1/6)[0K[1G[?25h[?25lremote: Resolving deltas:  83% (5/6)[0K[1G[?25hremote: Resolving deltas: 100% (6/6), completed with 6 local [0Ko[?25l
+bjects.[0K[?25h[?25l
+[0K[?25hTo https://github.com/schubertjan/CX.git[0K[?25l
+   ffaf08f..71285bb  master -> master[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (master[0K)
+[0m[0K
+$[0K[3G[?25h[?25l[21A delete mode 100644 .Rproj.user/AD741CD1/sources/s-E872[0KB
+C44/479656EF-contents[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E949[0K3
+E-CycloCross_Analysis/1/AD741CD19181F982/chunks.json[0K
+[0K
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m ([0Km
+aster)[0K
+[0m$ git push[0K
+Enumerating objects: 47, done.[0K
+Counting objects: 100% (47/47), done.[0K
+Delta compression using up to 4 threads.[0K
+Compressing objects: 100% (24/24), done.[0K
+Writing objects: 100% (27/27), 35.60 KiB | 1.02 MiB/s, [0Kd
+one.[0K
+Total 27 (delta 6), reused 0 (delta 0)[0K
+remote: Resolving deltas: 100% (6/6), completed with 6 [0Kl
+ocal objects.[0K
+To https://github.com/schubertjan/CX.git[0K
+   ffaf08f..71285bb  master -> master[0K
+[0K
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m ([0Km
+aster)[0K
+[0m$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25hA[0K[?25l
 [0K[?25h

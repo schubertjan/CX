@@ -7,6 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(ggplot2)
 library(gridExtra)
+library(rvest)
 ```
 
 
@@ -39,15 +40,38 @@ names(cCross)
 Search terms in foreign languages are include (i.e. "veldrijden" is included in the data). 
 
 ## Who searches for cyclo-cross?
-Like it or not, this is mainly a Belgium sport. Though the Dutch are second, the frequency of cyclo-cross related searches relative to other searches is only about 1/4 of what it is in Belgium and even with a larger population the total number of people searching for cyclo-cross is still only about a third compared to Belgium (well mainly Flanders). The UK comes closest (from the European countries) in terms of the absolute number of people searching for cyclo-cross (a smaller proportion of overall searches but a much larger population) but the number of people searching for cyclo-cross is still only about 2/3 of what it is in Belgium. The only country having a similar (or a slightly larger) number of cyclo-cross related searches are the US due to the sheer size of the market. Since the American cyclists do not participate in the European races, it is questionable to what extend the searches are related to their interest in the European races (and therefore influenced by the dominance of Van Der Poel). Since all the riders compete during the UCI World Championship (which draws the largest number of searches) we include the US in the analysis. Cyclo-cross popularity (expressed in number of searches) mainly comes from about six key markets (Belgium, the US, the UK, France, Germany and the Netherlands).
+Like it or not, this is mainly a Belgium sport. Relative to its population the Belgians search for cyclo-cross much more than any other nation. Despite relatively small population they account for about 15% of all searches. Though the Dutch are second, the frequency of cyclo-cross related searches relative to other searches is only about 1/4 of what it is in Belgium and even with a larger population the total number of people searching for cyclo-cross is still only about a third compared to Belgium (well mainly Flanders). The UK comes closest (from the European countries) in terms of the absolute number of people searching for cyclo-cross (a smaller proportion of overall searches but a much larger population) but the number of people searching for cyclo-cross is still only about 2/3 of what it is in Belgium. The only country having a similar (or a slightly larger) number of cyclo-cross related searches are the US due to the sheer size of the market. Since the American cyclists do not participate in the European races, it is questionable to what extend the searches are related to their interest in the European races (and therefore influenced by the dominance of Van Der Poel). Since all the riders compete during the UCI World Championship (which draws the largest number of searches) we include the US in the analysis. Cyclo-cross popularity (expressed in number of searches) mainly comes from about seven key markets (Belgium, the US, the UK, France, Germany, Japan and the Netherlands).
 
 **Popularity of CX related searches by market**
-```{r}
+```{r Geo Data}
 geoData <- read.csv("geoMap.csv", skip = 2, stringsAsFactors = FALSE)
 names(geoData)[2] <- "index"
 geoData$index[geoData$index == "<1"] <- "0"
 geoData$index <- as.numeric(geoData$index)
-head(geoData[order(geoData$index, decreasing = TRUE), ], n = 25)
+
+#read population data
+urlPage <- read_html("https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population")
+
+countryText <- urlPage %>%
+  html_nodes("td") %>%
+  html_text()  
+
+countryM <- matrix(countryText[-c(1,2)], ncol = 6, nrow = 242, byrow = TRUE)
+countryM <- apply(countryM, 2, gsub, pattern = "^ |\n|,|\\[Note [0-9]]", replacement = "")
+countryDF <- as.data.frame(countryM[, c(2, 3)], stringsAsFactors = FALSE)
+names(countryDF) <- c("Country", "Population")
+countryDF$Country[countryDF$Country == "Czech Republic"] <- "Czechia"
+countryDF$Population <- as.numeric(countryDF$Population)
+
+#merge
+geoData <- merge(geoData, countryDF, by = "Country", all.x = TRUE)
+
+#calculate index proportion
+geoData$wIndex <- geoData$index/100*geoData$Population
+geoData$Prop_of_all_searches <- round(geoData$wIndex/sum(geoData$wIndex, na.rm = TRUE)*100,1)
+
+#print
+head(geoData[order(geoData$index, decreasing = TRUE), c("Country", "index", "Prop_of_all_searches")], n = 25)
 ```
 
 ## About the method
@@ -116,8 +140,8 @@ print(seasonTrend$Netherlands$Trend)
 ```
 
 What about the other big market? In the US, the number of cyclo-cross related searches has been declining since 2014-2015 season and has slowed in the last two years. There has been a similar decline in the UK which however accelerated in the last two seasons. Similarly, there has been a decrease in searches in France in the last two seasons. The only market that hasn't seen a decrease is Germany. Even here, the rate of acceleration slowed in the last two seasons.
-```{r Season Other Markets, fig.width = 10}
-grid.arrange(seasonTrend$UnitedStates$Trend, seasonTrend$UnitedKingdom$Trend, seasonTrend$France$Trend, seasonTrend$Germany$Trend, nrow = 2, ncol = 2)
+```{r Season Other Markets, fig.width = 15}
+grid.arrange(seasonTrend$UnitedStates$Trend,seasonTrend$UnitedKingdom$Trend, seasonTrend$France$Trend, seasonTrend$Germany$Trend, seasonTrend$Japan$Trend, nrow = 2, ncol = 3)
 ```
 
 ## Is Van Der Poel killing the cyclo-cross?

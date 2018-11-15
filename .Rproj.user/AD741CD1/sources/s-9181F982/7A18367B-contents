@@ -1,0 +1,5 @@
+urlPage <- read_html("https://en.wikipedia.org/wiki/Mathieu_van_der_Poel")
+
+pageText <- urlPage %>%
+  html_nodes("dd") %>%
+  html_text()

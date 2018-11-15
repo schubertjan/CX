@@ -1,1 +1,4 @@
 "0","knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)"
+"0","library(ggplot2)"
+"0","library(gridExtra)"
+"0","library(rvest)"
