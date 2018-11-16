@@ -8,6 +8,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(ggplot2)
 library(gridExtra)
 library(rvest)
+library(knitr)
 ```
 
 
@@ -71,7 +72,7 @@ geoData$wIndex <- geoData$index/100*geoData$Population
 geoData$Prop_of_all_searches <- round(geoData$wIndex/sum(geoData$wIndex, na.rm = TRUE)*100,1)
 
 #print
-head(geoData[order(geoData$index, decreasing = TRUE), c("Country", "index", "Prop_of_all_searches")], n = 25)
+kable(head(geoData[order(geoData$index, decreasing = TRUE), c("Country", "index", "Prop_of_all_searches")], n = 25))
 ```
 
 ## About the method
@@ -114,6 +115,23 @@ seasonTrend <- lapply(cCross, function(x){
                     Change = change,
                     Table = DF))
 })
+```
+
+## Van Der Poel's dominance
+Van Der Poel's has been successful since he entered the Elite races, but his absolute dominance really started in season 2017-2018 and further continues in 2018-2019 where he seems to win every races he participates in. To borrow words from the Cyclocross Magazine: "Even though Van der Poel dominated the series on the course (season 2016-2017), there was a sense Van Aert could win most races...In 2017, the “beautiful duel” has been an afterthought."
+
+```{r Van Der Poel Data}
+VdP <- as.data.frame(matrix(c(2014, 12, 5, 4, 2015, 11, 2, 1, 2016, 22, 5, 0, 2017, 31, 3, 3), 
+                            nrow = 4, 
+                            ncol = 4, 
+                            byrow = TRUE))
+names(VdP) <- c("Season", "First", "Second", "Third")
+
+ggplot(data = VdP, aes(x = Season, y = First)) +
+  geom_col() +
+  ylab("Number of First Places")
+
+VdP
 ```
 
 ## Popularity of cyclo-cross worldwide
