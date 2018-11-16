@@ -155,6 +155,16 @@ print(seasonTrend$Belgium$Trend)
 Are the Dutch more interested in cyclo-cross because of their countryman winning race after race? Yes, the number of people searching for cyclo-cross has been increasing steadily since 2015-2016 season and skyrocketed in the last season. Interestingly, it has been stable this season (is winning getting boring?).
 ```{r Season Dutch, fig.width = 10}
 print(seasonTrend$Netherlands$Trend)
+
+ggplot() +
+  geom_point(aes(x = VdP$First, 
+                 y = seasonTrend$Netherlands$Table[-c(1,6), 2]), size = 4) + 
+  geom_text(aes(x = VdP$First, 
+                y = seasonTrend$Netherlands$Table[-c(1,6), 2],
+                label = VdP$Season), nudge_y = 0.4) +
+  xlab("Number of first places") +
+  ylab("Average interest in a seson") +
+  ggtitle("Correlation between number of first places average interest in a seson - Netherlands")
 ```
 
 What about the other big market? In the US, the number of cyclo-cross related searches has been declining since 2014-2015 season and has slowed in the last two years. There has been a similar decline in the UK which however accelerated in the last two seasons. Similarly, there has been a decrease in searches in France in the last two seasons. The only market that hasn't seen a decrease is Germany. Even here, the rate of acceleration slowed in the last two seasons.

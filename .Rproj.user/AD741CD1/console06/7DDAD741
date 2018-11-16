@@ -1,2 +1,132 @@
 [?25l$ gi[0K[?25ht[0K[7G[?25l$ git a[0K[?25hd[0Kd[0K[11G[?25l$ git add -[0K[?25hA[0K[?25l
+[0K[?25hwarning: LF will be replaced by CRLF in .Rhistory.[0K[?25l
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4[?25l
+1CD1/pcs/files-pane.pper.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4
+1CD1/pcs/source-pane.pper.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4[?25l
+1CD1/pcs/windowlayoutstate.pper.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4[?25l
+1CD1/pcs/workbench-pane.pper.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4[?25l
+1CD1/rmd-outputs.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4[?25l
+1CD1/sources/prop/66F21CDC.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/sha[0Kr
+ed/notebooks/42E9493E-CycloCross_Analysis/1/s/csetup_ch[0Ku
+nk/000002.csv.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/sha[0Kr[?25l
+ed/notebooks/paths.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4[?25l
+1CD1/sources/s-C4C00F2A/E66FB0D7.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+warning: LF will be replaced by CRLF in .Rproj.user/AD7[0K4
+1CD1/sources/s-C4C00F2A/E66FB0D7-contents.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25hwarning: LF will be replaced by CRLF in .Rproj.user/sha[0Kr[?25l
+ed/notebooks/42E9493E-CycloCross_Analysis/1/s/cxef371rn[0Kf
+85p/000002.csv.[0K
+The file will have its original line endings in your wo[0Kr
+king directory.[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m ([0Km
+aster)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git c[0K[?25hi[0K[?25l$ git c[0K[?25ho[0Km[0Km[0Ki[0Kt[0K[14G[?25l$ git commit -[0K[?25hm[0K[17G[?25l$ git commit -m "[0K[?25hV[0Ka[0Kn[0K[22G[?25l$ git commit -m "Van D[0K[?25he[0Kr[0K[26G[?25l$ git commit -m "Van Der P[0K[?25ho[0Ke[0Kl[0K[31G[?25l$ git commit -m "Van Der Poel r[0K[?25he[0Ks[0Ku[0Kl[0Kt[0Ks[0K"[0K[?25l
+[0K[?25h[master 27aa50a] Van Der Poel results[0K[?25l
+ 19 files changed, 780 insertions(+), 523 deletions(-)[0K
+ rewrite .Rproj.user/AD741CD1/console06/7DDAD741 (98%)[0K
+ rewrite .Rproj.user/AD741CD1/console06/INDEX001 (85%)[0K
+ delete mode 100644 .Rproj.user/AD741CD1/sources/s-9181[0KF
+982/76FDE021-contents[0K
+ delete mode 100644 .Rproj.user/AD741CD1/sources/s-9181[0KF
+982/7A18367B-contents[0K
+ rename .Rproj.user/AD741CD1/sources/{s-9181F982 => s-C[0K4
+C00F2A}/E66FB0D7 (66%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-9181F982 => s-C[0K4
+C00F2A}/E66FB0D7-contents (89%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-9181F982 => s-C[0K4
+C00F2A}/lock_file (100%)[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E949[0K3
+E-CycloCross_Analysis/1/AD741CD1C4C00F2A/chunks.json[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E949[0K3
+E-CycloCross_Analysis/1/s/cxef371rnf85p/000002.csv[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E949[0K3
+E-CycloCross_Analysis/1/s/cxef371rnf85p/000003.html[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E949[0K3
+E-CycloCross_Analysis/1/s/cxef371rnf85p/000003.metadata[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m ([0Km
+aster)[0m[0K
+$[0K[3G[?25h[?25l$ g[0K[?25hi[0Kt[0K[7G[?25l$ git p[0K[?25hu[0Ks[0Kh[0K[?25l
+[0K[?25hEnumerating objects: 54, done.[0K[?25l
+Counting objects:   1% (1/54)[0K[1G[?25h[?25lCounting objects:  37% (20/54)[0K[1G[?25h[?25lCounting objects:  62% (34/54)[0K[1G[?25hCounting objects: 100% (54/54), done.[0K[?25l
+Delta compression using up to 4 threads.[0K
+Compressing objects:  70% (19/27)[0K[1G[?25hCompressing objects: 100% (27/27), done.[0K[?25l
+Writing objects:  18% (6/32)[0K[2G[?25h[?25lWriting objects:  65% (21/32)[0K[1G[?25h[?25lWriting objects:  96% (31/32)[0K[1G[?25h[?25lWriting objects: 100% (32/32), 19.69 KiB | 87.00 KiB/s,[0K[1G[?25h[?25l
+done.[0K
+Total 32 (delta 10), reused 0 (delta 0)[0K
+[0K[?25h[?25lremote: Resolving deltas:  90% (9/10)[0K[1G[?25hremote: Resolving deltas: 100% (10/10), completed with [0K8[?25l
+ local objects.[0K
+[0K[?25hTo https://github.com/schubertjan/CX.git[0K[?25l
+   f27c766..27aa50a  master -> master[0K
+[0K[?25h[?25l
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m ([0Km
+aster)[0m[0K
+$[0K[3G[?25h[?25l[36A delete mode 100644 .Rproj.user/AD741CD1/sources/s-9181F9[0K8
+2/76FDE021-contents[0K
+ delete mode 100644 .Rproj.user/AD741CD1/sources/s-9181F9[0K8
+2/7A18367B-contents[0K
+ rename .Rproj.user/AD741CD1/sources/{s-9181F982 => s-C4C[0K0
+0F2A}/E66FB0D7 (66%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-9181F982 => s-C4C[0K0
+0F2A}/E66FB0D7-contents (89%)[0K
+ rename .Rproj.user/AD741CD1/sources/{s-9181F982 => s-C4C[0K0
+0F2A}/lock_file (100%)[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E9493E[0K-
+CycloCross_Analysis/1/AD741CD1C4C00F2A/chunks.json[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E9493E[0K-
+CycloCross_Analysis/1/s/cxef371rnf85p/000002.csv[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E9493E[0K-
+CycloCross_Analysis/1/s/cxef371rnf85p/000003.html[0K
+ create mode 100644 .Rproj.user/shared/notebooks/42E9493E[0K-
+CycloCross_Analysis/1/s/cxef371rnf85p/000003.metadata[0K
+[0K
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (ma[0Ks
+ter)[0K
+[0m$ git push[0K
+Enumerating objects: 54, done.[0K
+Counting objects: 100% (54/54), done.[0K
+Delta compression using up to 4 threads.[0K
+Compressing objects: 100% (27/27), done.[0K
+Writing objects: 100% (32/32), 19.69 KiB | 87.00 KiB/s, d[0Ko
+ne.[0K
+Total 32 (delta 10), reused 0 (delta 0)[0K
+remote: Resolving deltas: 100% (10/10), completed with 8 [0Kl
+ocal objects.[0K
+To https://github.com/schubertjan/CX.git[0K
+   f27c766..27aa50a  master -> master[0K
+[0K
+[0;32mSchubertJ@MBOLYD309504 [0;35m [0;33m~/Documents/github/cycloCross[0;36m (ma[0Ks
+ter)[0K
+[0m$[0K[3G[?25h[?25l$ git push[0K[?25h[?25l$ git commit -m "Van Der Poel results"[0K[?25h[?25l$ git add -A[0K[?25h[?25l
 [0K[?25h

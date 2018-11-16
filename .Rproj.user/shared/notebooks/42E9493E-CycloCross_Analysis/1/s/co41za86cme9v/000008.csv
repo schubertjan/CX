@@ -1,0 +1,5 @@
+"0","ggplot() +"
+"0","  geom_point(aes(x = VdP$First, y = seasonTrend$Netherlands$Table[-c(1,6), 2], label = VdP$Season)) +"
+"0","  xlab(""Number of first places"") +"
+"0","  ylab(""Average interest in a seson"") +"
+"0","  ggtitle(""Correlation between number of first places average interest in a seson"")"
